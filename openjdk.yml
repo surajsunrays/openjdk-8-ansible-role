@@ -1,0 +1,7 @@
+---
+- name: install openjdk 8 on ubuntu
+  hosts: localhost
+  become: yes
+  become_method: sudo
+  roles:
+    - openjdk
