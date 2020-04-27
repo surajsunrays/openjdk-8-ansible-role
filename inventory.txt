@@ -1,1 +1,1 @@
-localhost ansible_host=192.168.0.200 ansible_connection=ssh ansible_user=sunrays ansible_ssh_pass=xxxxxxxx
+localhost ansible_host=192.168.0.200 ansible_connection=ssh ansible_user=sunrays ansible_ssh_pass=sunrays8695
