@@ -1,0 +1,26 @@
+---
+# tasks file for openjdk
+- name: Updating apt-get cache
+  apt:
+    update_cache: yes
+  become: yes
+  become_method: sudo
+
+- name: install required packages
+  apt:
+    name: "{{ packages }}"
+    state: present
+  become: yes
+  become_method: sudo
+
+- name: Updating apt-get cache again
+  apt:
+    update_cache: yes
+  become: yes
+  become_method: sudo
+
+- name: export environment variables
+  shell: echo "export JAVA_HOME="/usr/lib/jvm/java-11-oracle"" >> ~/.profile; echo "export JRE_HOME="/usr/lib/jvm/java-11-oracle/jre"" >> ~/.profile;
+
+- name: source environment variables
+  shell: . ~/.profile
