@@ -19,8 +19,8 @@
   become: yes
   become_method: sudo
 
-- name: export environment variables
-  shell: echo "export JAVA_HOME="/usr/lib/jvm/java-11-oracle"" >> ~/.profile; echo "export JRE_HOME="/usr/lib/jvm/java-11-oracle/jre"" >> ~/.profile;
+- name: Transfer the script
+  copy: src=export_variables.sh dest=$HOME/ mode=0777
 
-- name: source environment variables
-  shell: . ~/.profile
+- name: Execute the script
+  shell: bash $HOME/export_variables.sh 
